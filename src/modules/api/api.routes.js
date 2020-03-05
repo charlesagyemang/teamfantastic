@@ -11,7 +11,7 @@ apiRouter.get('/', (req, res) => {
 });
 
 // Plug module routers
-apiRouter.use('/user', UserRouter);
+apiRouter.use('/users', UserRouter);
 
 //
 

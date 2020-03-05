@@ -10,8 +10,7 @@ module.exports = {
 
     createdAt: { allowNull: false, type: Sequelize.DATE },
     updatedAt: { allowNull: false, type: Sequelize.DATE },
-  })
-  .then(() => queryInterface.addIndex('users', ['email'])),
+  }).then(() => queryInterface.addIndex('users', ['email'])),
 
 
   down: queryInterface => queryInterface.dropTable('users'),

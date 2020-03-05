@@ -9,8 +9,8 @@ module.exports = {
     seederStoragePath: 'src/db/dev_seed_sequelize_data.json',
   },
   test: {
-    username: null,
-    password: null,
+    username: 'postgres',
+    password: 'password',
     database: 'wooden-test',
     host: 'localhost',
     dialect: 'postgres',
