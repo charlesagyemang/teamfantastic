@@ -22,7 +22,7 @@
     "sequelize": "node_modules/.bin/sequelize"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.19.2",
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.7.0",
@@ -34,6 +34,7 @@
     "express": "4.13.4",
     "express-jwt": "3.3.0",
     "express-validation": "^1.0.2",
+    "geolib": "^3.2.1",
     "http-status": "^1.0.1",
     "joi": "^10.6.0",
     "jsonwebtoken": "7.1.9",
@@ -49,7 +50,8 @@
     "sequelize": "^4.37.6",
     "sequelize-cli": "^4.0.0",
     "source-map-support": "^0.4.15",
-    "validator": "^9.1.1"
+    "validator": "^9.1.1",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

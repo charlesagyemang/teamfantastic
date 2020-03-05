@@ -7,7 +7,9 @@ const apiRouter = Router();
 
 // get version number of  the api
 apiRouter.get('/', (req, res) => {
-  res.json({ version });
+  res.json({
+    version,
+  });
 });
 
 // Plug module routers
