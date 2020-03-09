@@ -3,7 +3,7 @@ import request from 'supertest-as-promised';
 import { nuke } from '../../../helpers/test_helpers';
 import User from '../user.model';
 import server from '../../../server';
-import { disto, testSoapEndpoint } from '../../location/location.controller';
+import { disto, computeDestination } from '../../location/location.controller';
 
 describe('User::Routes', async () => {
   beforeEach(async () => {
@@ -32,10 +32,10 @@ describe('User::Routes', async () => {
 
 it.skip('should check coordinates given successfully ', async () => {
   const locationCordinates = [
-    ['5.627102, -0.303049'], ['5.627476, -0.302786'], // 59  meters ==> Within Range
-    ['5.625596, -0.294573'], ['5.625760, -0.295073'], // 26  meters ==> Within Range
-    ['5.623761, -0.294916'], ['5.624342, -0.296684'], // 91 meters ==> Outside Range
-    ['5.622462, -0.173378'], ['5.624768, -0.177390'], // 362 meters ==> Outside Range
+    ['5.627102, -0.303049'], ['5.627476, -0.302786'], // 51  meters ==> Within Range
+    ['5.625596, -0.294573'], ['5.625760, -0.295073'], // 58  meters ==> Within Range
+    ['5.623761, -0.294916'], ['5.624342, -0.296684'], // 206 meters ==> Outside Range
+    ['5.622462, -0.173378'], ['5.624768, -0.177390'], // 513 meters ==> Outside Range
   ];
   const testResultsArray = ['51 Meters', '58 Meters', '206 Meters', '513 Meters'];
 
@@ -54,5 +54,7 @@ it.skip('should check coordinates given successfully ', async () => {
 
 
 it.only('should test soap endpoint and get data successfully', async () => {
-  testSoapEndpoint();
+  // testSoapEndpoint();
+  computeDestination();
+
 });

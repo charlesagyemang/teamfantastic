@@ -20,3 +20,21 @@ export const testSoapEndpoint = async () => {
       console.log(err);
     });
 };
+
+export const getBounds = async () => {
+  console.log(geolib.getBoundsOfDistance(
+    { latitude: 5.627102, longitude: -0.303049 },
+    200
+));
+}
+
+
+export const computeDestination = async () => {
+  console.log(geolib.computeDestinationPoint(
+    [5.627102,-0.303049],
+    // 5.627102, -0.3012503567881626
+    // range
+    200,
+    3,
+  ));
+}
