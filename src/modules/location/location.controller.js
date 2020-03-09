@@ -29,12 +29,21 @@ export const getBounds = async () => {
 }
 
 
-export const computeDestination = async () => {
-  console.log(geolib.computeDestinationPoint(
-    [5.627102,-0.303049],
-    // 5.627102, -0.3012503567881626
-    // range
-    200,
-    3,
-  ));
+const getPointsFromGivenDegreeAndDistance = async (lon, lat, radius, degree) => {
+
+  const result = await geolib.computeDestinationPoint(
+    [parseFloat(lon),parseFloat(lat)],
+    radius,
+    degree,
+  );
+
+  return result;
+}
+
+export const getHighestLonAndLat = async (lon, lat, radius) => {
+
+  const ninetyDegreesPoint    = await getPointsFromGivenDegreeAndDistance(lon,lat,radius, 90);
+  const oneEightyDegreesPoint = await getPointsFromGivenDegreeAndDistance(lon,lat,radius, 180);
+
+  return {lon: ninetyDegreesPoint.longitude, lat: oneEightyDegreesPoint.latitude};
 }

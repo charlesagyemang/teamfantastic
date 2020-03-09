@@ -3,7 +3,7 @@ import request from 'supertest-as-promised';
 import { nuke } from '../../../helpers/test_helpers';
 import User from '../user.model';
 import server from '../../../server';
-import { disto, computeDestination } from '../../location/location.controller';
+import { disto, getHighestLonAndLat } from '../../location/location.controller';
 
 describe('User::Routes', async () => {
   beforeEach(async () => {
@@ -55,6 +55,8 @@ it.skip('should check coordinates given successfully ', async () => {
 
 it.only('should test soap endpoint and get data successfully', async () => {
   // testSoapEndpoint();
-  computeDestination();
+  const testResults = await getHighestLonAndLat('5.627102', '-0.303049', 200);
+
+  console.log(testResults);
 
 });
